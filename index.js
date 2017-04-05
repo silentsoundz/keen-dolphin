@@ -11,9 +11,6 @@ server.use(bodyParser.json())
 
 server.set('view engine', 'pug')
 
-server.get('/ping', (request, response, next) => {
-  response.send('pong')
-}) 
 
 server.get('/', (request, response) => {
   db.getBook()
