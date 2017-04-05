@@ -8,30 +8,13 @@ block content
       hr
     .main
       ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
-        .book-info
-          li#book-title= 'book.title'
-          li#book-author= 'by book.author'
-          li#book-genre= 'book.genre'
-          .buttons
-            button(type='button') Edit
-            button(type='button') Delete  
-      ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
-        .book-info
-          li#book-title= 'book.title'
-          li#book-author= 'by book.author'
-          li#book-genre= 'book.genre'
-          .buttons
-            button(type='button') Edit
-            button(type='button') Delete
-      ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
-        .book-info
-          li#book-title= 'book.title'
-          li#book-author= 'by book.author'
-          li#book-genre= 'book.genre'
-          .buttons
-            button(type='button') Edit
-            button(type='button') Delete         
- 
+        for book in books
+          img#book-cover(src='http://placehold.it/150x225', alt='book cover')
+          .book-info
+            li#book-title= book.title
+            li#book-author= book.author
+            li#book-genre= book.genres
+            li#book-year= book.year
+            .buttons
+              button(type='button') Edit
+              button(type='button') Delete
