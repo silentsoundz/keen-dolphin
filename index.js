@@ -13,6 +13,10 @@ server.get('/', (request, response) => {
   response.render('index.pug')
 })
 
+server.get('/addbook', (request, response) => {
+  response.render('add-book.pug')
+})
+
 server.use(bodyParser.json())
 
 server.get('/ping', (request, response, next) => {
@@ -92,8 +96,11 @@ server.get( '/api/genres', ( request, response ) => {
     .then( result => response.json( result ))
 })
 
-if (process.env.NODE_ENV !== 'test'){
-  server.listen(server.get('port'))
-}
+// if (process.env.NODE_ENV !== 'test'){
+//   server.listen(server.get('port'))
+// }
+
+server.listen(3000)
+console.log("Listening on port 3000");
 
 module.exports = server
