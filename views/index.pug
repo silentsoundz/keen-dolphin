@@ -3,12 +3,15 @@ extends layout.pug
 block content
   body
     .header
+      input#search-box(type='text', name='search', value='search', method='post')
       p#logo keen-dolphin's
       h1 Simple Bookstore
+      button#addbook(type='button') Add Book
       hr
     .main
       ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
+        li
+          img#book-cover(src='http://placehold.it/150x225', alt='book cover')
         .book-info
           li#book-title= 'book.title'
           li#book-author= 'by book.author'
@@ -16,22 +19,3 @@ block content
           .buttons
             button(type='button') Edit
             button(type='button') Delete  
-      ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
-        .book-info
-          li#book-title= 'book.title'
-          li#book-author= 'by book.author'
-          li#book-genre= 'book.genre'
-          .buttons
-            button(type='button') Edit
-            button(type='button') Delete
-      ul.book
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
-        .book-info
-          li#book-title= 'book.title'
-          li#book-author= 'by book.author'
-          li#book-genre= 'book.genre'
-          .buttons
-            button(type='button') Edit
-            button(type='button') Delete         
- 
