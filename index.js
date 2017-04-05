@@ -17,7 +17,7 @@ server.use(bodyParser.json())
 
 server.get('/ping', (request, response, next) => {
   response.send('pong')
-})
+}) 
 
 server.post('/api/test/reset-db', (request, response, next) =>{
   db.resetDb().then(() => {
