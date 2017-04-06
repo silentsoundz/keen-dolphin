@@ -8,13 +8,18 @@ const path = require('path')
 server.use(express.static(path.join(__dirname, 'public')));
 server.set('view engine', 'pug')
 
-
 server.get('/', (request, response) => {
-  response.render('index.pug')
+  db.getBooks(request.query)
+    .then((books) => {
+    response.render('index.pug', {books})
+  })
 })
 
-server.get('/addbook', (request, response) => {
-  response.render('add-book.pug')
+server.get('/details', (request, response) => {
+  db.getBook(2)
+    .then((book) => {
+    response.render('details.pug', {book})
+  })
 })
 
 server.use(bodyParser.json())
@@ -96,11 +101,11 @@ server.get( '/api/genres', ( request, response ) => {
     .then( result => response.json( result ))
 })
 
-// if (process.env.NODE_ENV !== 'test'){
-//   server.listen(server.get('port'))
-// }
+server.set('port', process.env.PORT || '3000')
 
-server.listen(3000)
-console.log("Listening on port 3000");
+if (process.env.NODE_ENV !== 'test'){
+  server.listen(server.get('port'))
+}
+
 
 module.exports = server

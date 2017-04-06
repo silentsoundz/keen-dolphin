@@ -42,7 +42,7 @@ global.request = (method, path, postBody) => {
       if (error && error.status >= 500) {
         console.log( error.message )
         console.warn('Server Error:' + response.body.error.message)
-        // console.warn(response.body.error.stack)
+        console.warn(response.body.error.stack)
         reject(error)
       }else{
         response.request = {
