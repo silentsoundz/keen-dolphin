@@ -1,6 +1,6 @@
 const pgp = require('pg-promise')()
 const pgpdb = pgp({ database:'bookworm'})
-const SQL = require( './sql_strings' )
+const SQL = require( './sql-strings' )
 
 
 const resetDb = () => {
@@ -89,17 +89,17 @@ const getBook = (id) => {
   WHERE books.id = ${id}`)
 }
 
-const getBooks = ({ page, title, author, year, cont}) => {
-  page = parsInt( page || 1 )
+const getBooks = ({ page, title, author, year, count}) => {
+  page = parseInt( page || 1 )
   const offset = (page -1) * 10
 
   let params = [ offset ]
   let index = 1
   let clauses = []
 
-  if( cont !== undefined ) {
+  if( count !== undefined ) {
     clauses.push( `SELECT books.id FROM books LIMIT 1 OFFSET $1` , [count])
-    params.push( count)
+    params.push( count )
   }
 
   if( title !== undefined ) {
@@ -112,15 +112,14 @@ const getBooks = ({ page, title, author, year, cont}) => {
     params.push( author )
   }
 
-
   if ( year != undefined ) {
     clauses.push( `books.year=\$${++index}` )
     params.push( year )
   }
 
-  query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ')}` : ''} ORDER BY title LIMIT 50 OFFSET $1`
+  query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ')}` : ''} ORDER BY title LIMIT 10 OFFSET $1`
 
-  return phpdb.query( query, params )
+  return pgpdb.query( query, params )
   }
 
   const getAuthors = ({ page, author}) => {
