@@ -12,18 +12,26 @@ const resetDb = () => {
     pgpdb.query('truncate table book_genres restart identity')
   ])
 }
-const deleteBook = (id) => {
-  return pgpdb.query('DELETE from books where id = $1', [id])
-  .then(
-  return pgpdb.query('DELETE from book_authors where book_id = $1', [id])
-).then(
-  return pgpdb.query('DELETE from book_genres where book_id = $1', [id])
-)}
-
 
 // const deleteBook = (id) => {
-//   return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};`)
+//   return Promise.all([
+//     pgpdb.query('DELETE from books where id = $1', [id]),
+//     pgpdb.query('DELETE from book_authors where book_id = $1', [id]),
+//     pgpdb.query('DELETE from book_genres where book_id = $1', [id])
+//   ])
 // }
+// const deleteBook = (id) => {
+//   return pgpdb.query('DELETE from books where id = $1', [id])
+//   .then(
+//   return pgpdb.query('DELETE from book_authors where book_id = $1', [id])
+// ).then(
+//   return pgpdb.query('DELETE from book_genres where book_id = $1', [id])
+// )}
+
+
+const deleteBook = (id) => {
+  return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};`)
+}
 
 // const updateBook = (id, title, year) => {
 //   return pgpdb.query('UPDATE books SET title = $1,year = $2 WHERE id = $3 ;', [title, year, id])
@@ -44,7 +52,7 @@ const createGenre = genre => {
 
 
 const getGenres = () => {
-  return pgpdb.any( "SELECT DISTINCT genres.name FROM genres ORDER BY name ASC LIMIT 10" )
+  return pgpdb.any( 'SELECT DISTINCT genres.name FROM genres ORDER BY name ASC LIMIT 10' )
 }
 
 const joinBookAuthor = (bookId, authorId) => {

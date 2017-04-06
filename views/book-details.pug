@@ -15,8 +15,9 @@ block content
         li#book-author= book.author
         li#book-genre= book.genre
         li#book-year= book.year
-        form.buttons(action='/api/books/:id', method='post')
-         button#edit(type='button') Edit
-        form.buttons(action='/api/books/:id/delete', method='post')
-         button#delete(type='button') Delete
-  script(src='./javascripts/controler.js')
+        input#book-id(type='hidden', value=book.id)
+        form.buttons(action=`/api/books/${book.id}/edit`, method='post')
+         button#edit(type='submit') Edit
+        form.buttons(action=`/api/books/${book.id}/delete`, method='post')
+         button#delete(type='submit') Delete
+  script(src='/javascripts/controler.js')
