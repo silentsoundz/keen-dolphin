@@ -15,10 +15,12 @@ server.get('/', (request, response) => {
   })
 })
 
-server.get('/details', (request, response) => {
-  db.getBook(2)
+server.get('/details/:id', (request, response) => {
+  db.getBook(request.params.id)
     .then((book) => {
     response.render('book-details.pug', {book})
+  }).catch(error => {
+    response.redirect('/')
   })
 })
 
@@ -95,7 +97,8 @@ server.get( '/api/books/:id', ( request, response ) => {
 
 server.post('/api/books/:id/delete', (request, response) => {
   db.deleteBook( request.params.id )
-    .then( () => response.status(200).json())
+    .then( () => //response.status(200).json())
+    response.redirect('/'))
 })
 
 server.get('/api/authors', ( request, response ) => {
