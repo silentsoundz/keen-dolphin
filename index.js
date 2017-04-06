@@ -18,8 +18,15 @@ server.get('/', (request, response) => {
 server.get('/details', (request, response) => {
   db.getBook(2)
     .then((book) => {
-    response.render('details.pug', {book})
+    response.render('book-details.pug', {book})
   })
+})
+
+server.get('/edit', (request, response) => {
+  db.getBook(2)
+    .then((book) => {
+      response.render('book-edit.pug', {book})
+    })
 })
 
 server.use(bodyParser.json())
