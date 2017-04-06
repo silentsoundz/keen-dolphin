@@ -5,8 +5,8 @@ block content
     p#logo keen-dolphin's
     h1 Simple Bookstore
     hr
-  .main 
-    h1 Book Details Page 
+  .main
+    h1 Book Details Page
     ul.book
       li
         img#book-cover(src='http://placehold.it/150x225', alt='book cover')
@@ -15,6 +15,8 @@ block content
         li#book-author= book.author
         li#book-genre= book.genre
         li#book-year= book.year
-        .buttons
-          button(type='button') Edit
-          button(type='button') Delete  
+        form.buttons(action='/api/books/:id', method='post')
+         button#edit(type='button') Edit
+        form.buttons(action='/api/books/:id/delete', method='post')
+         button#delete(type='button') Delete
+  script(src='./javascripts/controler.js')
