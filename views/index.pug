@@ -18,6 +18,5 @@ block content
             li#book-author= book.author
             li#book-genre= book.genre
             li#book-year= book.year
-            .buttons
-              button(type='button') Edit
-              button(type='button') Delete  
+            input#book-id(type='hidden', value=book.id)
+  script(src='/javascripts/controler.js')

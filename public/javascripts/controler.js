@@ -5,11 +5,11 @@
 //grab the node for the delete button
 
 // const deleteButton = document.getElementById('delete')
-// console.log(deleteButton)
+// // console.log(deleteButton)
 // deleteButton.addEventListener('click', function() {
-//   console.log('button clicked')
+//   // console.log('button clicked')
 //   const bookID = document.getElementById('book-id').value
-//   console.log('bookID', bookID)
+//   // console.log('bookID', bookID)
 //   fetch(`/api/books/${bookID}/delete`,
 //         {method: 'POST',
 //          mode: 'cors'})
@@ -17,6 +17,16 @@
 //            window.location = '/'
 //          })
 // })
+
+const thisBook = document.getElementsByClassName('book')
+console.log('thisBook', thisBook);
+for(var i =0; i< thisBook.length; i++) {
+thisBook[i].addEventListener('click', () => {
+    const bookID = document.getElementById('book-id').value
+        window.location = `/details/${bookID}`
+      })
+  }
+
 
 
 
