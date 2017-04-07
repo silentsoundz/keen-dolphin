@@ -6,6 +6,9 @@ const router = express.Router()
 const pug = require('pug')
 const path = require('path')
 
+server.use(bodyParser.json())
+server.use(bodyParser.urlencoded({extended: false}))
+
 server.use(express.static(path.join(__dirname, 'public')));
 server.set('view engine', 'pug')
 
@@ -34,7 +37,6 @@ server.get('/edit/:id', (request, response) => {
   })
 })
 
-server.use(bodyParser.json())
 
 server.get('/ping', (request, response, next) => {
   response.send('pong')
@@ -87,15 +89,13 @@ server.get( '/api/books/:id', ( request, response ) => {
 
 server.post( '/api/books/edit/:id', ( request, response, next ) => {
   let id = request.params.id
-  let book = request.body
-  console.log('book', book)
-  console.log('book', id)
-  console.log('book', request.body)
-
-  db.updateBook(id, book)
-  .then(result => {
-    response.json(result)
-  }).catch(error => response.status( 404 ).json() )
+  let title = request.body.title
+  let year = request.body.year
+  db.updateBook(id, title, year)
+  .then(result =>
+   response.redirect(`http://localhost:3000/details/${id}`)
+  )
+  .catch(error => response.status( 404 ))
 
   // What are the things we need to do?
     // Get input - title, author, year, id

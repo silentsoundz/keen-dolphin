@@ -9,7 +9,7 @@ block content
       button#addbook(type='button') Add Book
       hr
     .main
-      each book in books 
+      each book in books
         ul.book
           li
             img#book-cover(src='http://placehold.it/150x225', alt='book cover')
@@ -19,4 +19,4 @@ block content
             li#book-genre= book.genres
             li#book-year= book.year
             input#book-id(type='hidden', value=book.id)
-  script(src='/javascripts/controler.js')
+  //- script(src='/javascripts/controler.js')
