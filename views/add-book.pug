@@ -1,13 +1,17 @@
-extends layout.pug
-
-block content
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title keen-dolphin's Simple Bookstore
+    link(rel='stylesheet', href='/styles/meyers-reset.css')
+    link(rel='stylesheet', href='/styles/add-book.css')
   body
     .header
       p#logo keen-dolphin's
-      h1 Simple Bookstore
+      h1 Add Book Page
       hr
     .main
-      h1 Add Book Page
       ul
         li
           img#book-cover(src='http://placehold.it/150x225', alt='book cover')
