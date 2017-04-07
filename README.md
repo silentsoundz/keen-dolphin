@@ -20,7 +20,7 @@ In this goal, we will be applying the CRUD pattern to the real-world system of a
 
 - [x] Books have a title, author, and genre
 - [ ] Users can...
-  - [ ] Add books into the bookstore system via an admin page (_create_)
+  - [x] Add books into the bookstore system via an admin page (_create_)
   - [x] See a list of books on the home page (_read_)
   - [x] Edit a book's title, author, or genre (_update_)
   - [x] Delete a book from the bookstore (_delete_)
