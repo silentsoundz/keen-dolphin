@@ -27,7 +27,7 @@ In this goal, we will be applying the CRUD pattern to the real-world system of a
   - [ ] Search for books by title OR by author OR by genre (_read_)
   - [x] View book details on a book detail page (_read_)
 - [ ] Lists of books are always paginated in groups of 10
-- [ ] Book detail view is linked to from the listing and search pages
+- [x] Book detail view is linked to from the listing and search pages
 - [ ] Search results are presented in a new page
 - [x] Appropriate HTTP verbs are used for CRUD actions
   - [x] `GET` requests are only used for _read_ actions
