@@ -1,33 +1,25 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title keen-dolphin's Simple Bookstore
-    link(rel='stylesheet', href='./styles/meyers-reset.css')
-    link(rel='stylesheet', href='./styles/add-book.css')
+extends layout.pug
+
+block content
   body
     .header
       p#logo keen-dolphin's
       h1 Simple Bookstore
-      button#addbook(type='button') Add Book
       hr
     .main
-      ul.book
+      h1 Add Book Page
+      ul
         li
           img#book-cover(src='http://placehold.it/150x225', alt='book cover')
         .book-info
-          li
-            p Enter:
-          li#book-title
-            input#search-box(type='text', name='search', value='search', method='post')
-          li#book-author
-            input#search-box(type='text', name='search', value='search', method='post')
-          li#book-genre
-            input#search-box(type='text', name='search', value='search', method='post')
-          li#book-year
-            input#search-box(type='text', name='search', value='search', method='post')
-          li#book-image
-            input#search-box(type='text', name='search', value='search', method='post')
-          .buttons
-            button(type='button') Submit 
+          form(action='/api/books', method='post')
+            li#book-title
+              input(type='text' name='title', placeholder='book title')
+            li#book-year
+              input(type='text' name='year', placeholder='book year')
+            li#book-author
+              input(type='text' name='author', placeholder='book author')
+            li#book-genre
+              input(type='text' name='genres', placeholder='book genre')
+            form.buttons(action='/api/books', method='post')
+             button#add(type='submit') Submit

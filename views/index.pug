@@ -6,7 +6,8 @@ block content
       input#search-box(type='text', name='search', value='search', method='post')
       p#logo keen-dolphin's
       h1 Simple Bookstore
-      button#addbook(type='button') Add Book
+      form.buttons(action='http://localhost:3000/add', method='get')
+        button#addbook(type='submit' value='add book') Add Book
       hr
     .main
       each book in books
