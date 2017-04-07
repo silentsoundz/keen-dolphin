@@ -22,17 +22,17 @@ In this goal, we will be applying the CRUD pattern to the real-world system of a
 - [ ] Users can...
   - [ ] Add books into the bookstore system via an admin page (_create_)
   - [x] See a list of books on the home page (_read_)
-  - [ ] Edit a book's title, author, or genre (_update_)
+  - [x] Edit a book's title, author, or genre (_update_)
   - [x] Delete a book from the bookstore (_delete_)
   - [ ] Search for books by title OR by author OR by genre (_read_)
   - [x] View book details on a book detail page (_read_)
 - [ ] Lists of books are always paginated in groups of 10
 - [ ] Book detail view is linked to from the listing and search pages
 - [ ] Search results are presented in a new page
-- [ ] Appropriate HTTP verbs are used for CRUD actions
+- [x] Appropriate HTTP verbs are used for CRUD actions
   - [x] `GET` requests are only used for _read_ actions
-  - [ ] `POST` requests are only used for _create_ actions
-  - [ ] `PUT` or `PATCH` requests are only used for _update_ actions
+  - [x] `POST` requests are only used for _create_ actions
+  - [x] `PUT` or `PATCH` requests are only used for _update_ actions
   - [x] `DELETE` requests are only used for _delete_ actions
 - [x] All views are rendered on the server using server-side templates written with [Pug][] or [EJS][]
 - [x] Web server can be started with the command `npm start`
