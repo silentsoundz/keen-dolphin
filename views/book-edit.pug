@@ -13,13 +13,13 @@ block content
           img#book-cover(src='http://placehold.it/150x225', alt='book cover')
         .book-info
           form(action=`/api/books/edit/${book.id}`, method='post')
-            li#book-title 
-              input(type='text' name='title', value=book.title)    
-            li#book-year 
-              input(type='text' name='year', value=book.year)  
+            li#book-title
+              input(type='text' name='title', value=book.title)
+            li#book-year
+              input(type='text' name='year', value=book.year)
             button#edit(type='submit' method='post' value='submit') Submit
               //- input#book-id(type='hidden', value=book.id)
             //- li#book-author
-            //-   input(type='text' name='author', value=book.author)  
+            //-   input(type='text' name='author', value=book.author)
             //- li#book-genre
-            //-   input(type='text' name='genres', value=book.genres)  
+            //-   input(type='text' name='genres', value=book.genres)
