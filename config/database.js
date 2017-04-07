@@ -2,7 +2,6 @@ const pgp = require('pg-promise')()
 const pgpdb = pgp({ database:'bookworm'})
 const SQL = require( './sql-strings' )
 
-
 const resetDb = () => {
   return Promise.all([
     pgpdb.query('truncate table books restart identity'),
@@ -13,7 +12,8 @@ const resetDb = () => {
   ])
 }
 
-// const deleteBook = (id) => {
+//  Keeping these for future reference
+//  const deleteBook = (id) => {
 //   return Promise.all([
 //     pgpdb.query('DELETE from books where id = $1', [id]),
 //     pgpdb.query('DELETE from book_authors where book_id = $1', [id]),
@@ -28,7 +28,6 @@ const resetDb = () => {
 //   return pgpdb.query('DELETE from book_genres where book_id = $1', [id])
 // )}
 
-
 const deleteBook = (id) => {
   return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};`)
 }
@@ -41,7 +40,6 @@ const createBook = (title, year) => {
   return pgpdb.query('insert into books( title, year ) values($1, $2) returning id', [title, year]).then(result => result[0].id)
 }
 
-
 const createAuthor = author => {
   return pgpdb.query('insert into authors( name ) values( $1 ) returning id', [author]).then(result => result[0].id)
 }
@@ -49,7 +47,6 @@ const createAuthor = author => {
 const createGenre = genre => {
   return pgpdb.query('insert into genres( name ) values( $1 ) returning id', [genre]).then(result => result[0].id)
 }
-
 
 const getGenres = () => {
   return pgpdb.any( 'SELECT DISTINCT genres.name FROM genres ORDER BY name ASC LIMIT 10' )
@@ -88,7 +85,6 @@ const createWholeBook = book => {
     return book
   })
 }
-
 
 const BOOKS_QUERY =
   `SELECT books.*,
