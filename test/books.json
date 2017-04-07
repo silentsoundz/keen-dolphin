@@ -3,300 +3,350 @@
     "title":"Dune",
     "author":"Frank Herbert",
     "year": 1965,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/dune.jpg"
   },
   {
     "title":"1984 (Nineteen Eighty Four)",
     "author":"George Orwell",
     "year": 1949,
-    "genres": ["Sci-fi", "Science"]
+    "genres": ["Sci-fi", "Science"],
+    "bookurl": "./keen-book-covers/1984.jpg"
   },
   {
     "title":"Neuromancer",
     "author":"William Gibson",
     "year": 1984,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/neuromancer.jpg"
   },
   {
     "title":"Ender's Game",
     "author":"Orson Scott Card",
     "year": 1985,
-    "genres": ["Sci-fi", "Fantasy"]
+    "genres": ["Sci-fi", "Fantasy"],
+    "bookurl": "./keen-book-covers/enders-game.jpg"
   },
   {
     "title":"The Time Machine",
     "author":"H. G. Wells",
     "year": 1895,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/time-machine.jpg"
   },
   {
     "title":"Fahrenheit 451",
     "author":"Ray Bradbury",
     "year": 1953,
-    "genres": ["Sci-fi", "Science"]
+    "genres": ["Sci-fi", "Science"],
+    "bookurl": "./keen-book-covers/fahrenheit.jpg"
   },
   {
     "title":"Starship Troopers",
     "author":"Robert A. Heinlein",
     "year": 2004,
-    "genres": ["Sci-fi", "Fantasy"]
+    "genres": ["Sci-fi", "Fantasy"],
+    "bookurl": "./keen-book-covers/starship-troopers.jpg"
   },
   {
     "title":"Do Androids Dream of Electric Sheep?",
     "author":"Philip K. Dick",
     "year": 1968,
-    "genres": ["Sci-fi", "Robots"]
+    "genres": ["Sci-fi", "Robots"],
+    "bookurl": "./keen-book-covers/do-androids.jpg"
   },
   {
     "title":"The War of the Worlds",
     "author":"H. G. Wells",
     "year": 1898,
-    "genres": ["Sci-fi", "Horror"]
+    "genres": ["Sci-fi", "Horror"],
+    "bookurl": "./keen-book-covers/warofworlds.jpg"
   },
   {
     "title":"Brave New World",
     "author":"Aldous Huxley",
     "year": 1932,
-    "genres": ["Sci-fi", "War"]
+    "genres": ["Sci-fi", "War"],
+    "bookurl": "./keen-book-covers/brave-new-world.jpg"
   },
   {
     "title":"Foundation",
     "author":"Isaac Asimov",
     "year": 1951,
-    "genres": ["Sci-fi", "Boring"]
+    "genres": ["Sci-fi", "Boring"],
+    "bookurl": "./keen-book-covers/foundation.jpg"
   },
   {
     "title":"The Left Hand of Darkness",
     "author":"Ursula K. Le Guin",
     "year": 1969,
-    "genres": ["Sci-fi", "Horror"]
+    "genres": ["Sci-fi", "Horror"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Hyperion",
     "author":"Dan Simmons",
     "year": 1989,
-    "genres": ["Sci-fi", "Page Turner"]
+    "genres": ["Sci-fi", "Page Turner"],
+    "bookurl": "./keen-book-covers/hyperion.jpg"
   },
   {
     "title":"The Martian Chronicles",
     "author":"Ray Bradbury",
     "year": 1950,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/martian-chronicles.jpg"
   },
   {
     "title":"Stranger in a Strange Land",
     "author":"Robert A. Heinlein",
     "year": 1961,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/stranger-in-a-strange.jpg"
   },
   {
     "title":"Childhood's End",
     "author":"Arthur C. Clarke",
     "year": 1953,
-    "genres": ["Sci-fi", "Fantasy"]
+    "genres": ["Sci-fi", "Fantasy"],
+    "bookurl": "./keen-book-covers/childhoods-end.jpg"
   },
   {
     "title":"The Forever War",
     "author":"Joe Haldeman",
     "year": 1974,
-    "genres": ["Sci-fi", "War"]
+    "genres": ["Sci-fi", "War"],
+    "bookurl": "./keen-book-covers/forever-war.jpg"
   },
   {
     "title":"Kurt Vonnegut's Slaughterhouse-five",
     "author":"Kurt Vonnegut",
     "year": 1969,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "./keen-book-covers/slaughterhouse.jpg"
   },
   {
     "title":"Ringworld",
     "author":"Larry Niven",
     "year": 1970,
-    "genres": ["Sci-fi", "Fantasy"]
+    "genres": ["Sci-fi", "Fantasy"],
+    "bookurl": "./keen-book-covers/ringworld.jpg"
   },
   {
     "title":"Rendezvous with Rama",
     "author":"Arthur C. Clarke",
     "year": 1973,
-    "genres": ["Sci-fi", "Horror"]
+    "genres": ["Sci-fi", "Horror"],
+    "bookurl": "./keen-book-covers/rendezvous-with-rama.jpg"
   },
   {
     "title":"A Canticle for Leibowitz",
     "author":"Walter M. Miller Jr.",
     "year": 1959,
-    "genres": ["Sci-fi", "War"]
+    "genres": ["Sci-fi", "War"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Snow Crash",
     "author":"Neal Stephenson",
     "year": 1992,
-    "genres": ["Sci-fi", "Cyberpunk"]
+    "genres": ["Sci-fi", "Cyberpunk"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"I, Robot",
     "author":"Isaac Asimov",
     "year": 1950,
-    "genres": ["Sci-fi", "War"]
+    "genres": ["Sci-fi", "War"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"FRANKENSTEIN",
     "author":"Mary Shelley",
     "year": 1818,
-    "genres": ["Sci-fi", "Horror"]
+    "genres": ["Sci-fi", "Horror"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Moon Is a Harsh Mistress",
     "author":"Robert A. Heinlein",
     "year": 1966,
-    "genres": ["Space", "Rockets", "Orbit"]
+    "genres": ["Space", "Rockets", "Orbit"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Stars My Destination",
     "author":"Alfred Bester",
     "year": 1957,
-    "genres": ["Sci-fi", "Star Wars"]
+    "genres": ["Sci-fi", "Star Wars"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"A Wrinkle in Time",
     "author":"Madeleine L'Engle",
     "year": 1962,
-    "genres": ["Sci-fi", "Time Travel"]
+    "genres": ["Sci-fi", "Time Travel"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Old Man's War",
     "author":"John Scalzi",
     "year": 2005,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Dispossessed",
     "author":"Ursula K. Le Guin",
     "year": 1974,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Man in the High Castle",
     "author":"Philip K. Dick",
     "year": 1962,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Solaris",
     "author":"Stanisław Lem",
     "year": 1961,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Day of the Triffids",
     "author":"John Wyndham",
     "year": 1951,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Diamond Age",
     "author":"Neal Stephenson",
     "year": 1995,
-    "genres": ["Sci-fi", "Post Apocalyptic"]
+    "genres": ["Sci-fi", "Post Apocalyptic"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Twenty Thousand Leagues Under the Sea",
     "author":"Jules Verne",
     "year": 1870,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Ubik",
     "author":"Philip K. Dick",
     "year": 1969,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Roadside Picnic",
     "author":"Strugatsky Brothers",
     "year": 1972,
-    "genres": ["Sci-fi", "Post Apocalyptic"]
+    "genres": ["Sci-fi", "Post Apocalyptic"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Journey to the Center of the Earth",
     "author":"Jules Verne",
     "year": 1864,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Cryptonomicon",
     "author":"Neal Stephenson",
     "year": 1999,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"A Fire Upon the Deep",
     "author":"Vernor Vinge",
     "year": 1992,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Cat's Cradle",
     "author":"Kurt Vonnegut",
     "year": 1963,
-    "genres": ["Sci-fi", "Post Apocalyptic"]
+    "genres": ["Sci-fi", "Post Apocalyptic"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Female Man",
     "author":"Joanna Russ",
     "year": 1975,
-    "genres": ["Sci-fi", "Post Apocalyptic", "Gender"]
+    "genres": ["Sci-fi", "Post Apocalyptic", "Gender"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Red Mars",
     "author":"Kim Stanley Robinson",
     "year": 1992,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Flowers for Algernon",
     "author":"Daniel Keyes",
     "year": 1959,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Sirens of Titan",
     "author":"Kurt Vonnegut",
     "year": 1959,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Handmaid's Tale",
     "author":"Margaret Atwood",
     "year": 1985,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"More Than Human",
     "author":"Theodore Sturgeon",
     "year": 1953,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Second Foundation",
     "author":"Isaac Asimov",
     "year": 1953,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"I Am Legend",
     "author":"Richard Matheson",
     "year": 1954,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"Kindred",
     "author":"Octavia E. Butler",
     "year": 1979,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   },
   {
     "title":"The Caves of Steel",
     "author":"Isaac Asimov",
     "year": 1953,
-    "genres": ["Sci-fi"]
+    "genres": ["Sci-fi"],
+    "bookurl": "http://placehold.it/150x225"
   }
 ]

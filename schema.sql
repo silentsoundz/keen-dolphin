@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS books;
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  year INTEGER
+  year INTEGER,
+  bookurl VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS authors;
