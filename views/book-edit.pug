@@ -1,19 +1,25 @@
 extends layout.pug
 
 block content
-  .header
-    p#logo keen-dolphin's
-    h1 Simple Bookstore
-    hr
-  .main
-    ul.book
-      a(href= '/json-path' + book.id)
-        img#book-cover(src='http://placehold.it/150x225', alt='book cover')
+  body
+    .header
+      p#logo keen-dolphin's
+      h1 Simple Bookstore
+      hr
+    .main
+      h1 Edit Book Page
+      ul
+        li
+          img#book-cover(src='http://placehold.it/150x225', alt='book cover')
         .book-info
-      li#book-title= book.title
-      li#book-author= book.author
-      li#book-genre= book.genre
-      .buttons
-        button#edit(type='button') Edit
-        button#delete(type='button') Delete
-  script(src='./javascripts/controler.js')
+          form(action=`/api/books/edit/${book.id}`, method='post')
+            li#book-title 
+              input(type='text' name='title', value=book.title)    
+            li#book-year 
+              input(type='text' name='year', value=book.year)  
+            button#edit(type='submit' method='post' value='submit') Submit
+              //- input#book-id(type='hidden', value=book.id)
+            //- li#book-author
+            //-   input(type='text' name='author', value=book.author)  
+            //- li#book-genre
+            //-   input(type='text' name='genres', value=book.genres)  

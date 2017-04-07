@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const db = require('./config/database.js')
 const server = express()
+const router = express.Router()
 const pug = require('pug')
 const path = require('path')
 
@@ -24,11 +25,13 @@ server.get('/details/:id', (request, response) => {
   })
 })
 
-server.get('/edit', (request, response) => {
-  db.getBook(2)
+server.get('/edit/:id', (request, response) => {
+  db.getBook(request.params.id)
     .then((book) => {
       response.render('book-edit.pug', {book})
-    })
+  }).catch(error => {
+    response.redirect('/')
+  })
 })
 
 server.use(bodyParser.json())
@@ -82,18 +85,28 @@ server.get( '/api/books/:id', ( request, response ) => {
     .catch( error => response.status( 404 ).json() )
 })
 
-// server.post( '/api/books/:id', ( request, response ) => {
-//   response.json({ error: false })
-//   // What are the things we need to do?
-//     // Get input - title, author, year, id
-//     // Update book id with title and year
-//     // Then update book authors with author
-//       // delete everything in book_authors with this book id
-//       // ensure that the authors exist in the authors
-//       // get all the ids now for the authors
-//       // insert the book id/author ids into book_authors
-//     // Then fetch the book again to return to client
-// })
+server.post( '/api/books/edit/:id', ( request, response, next ) => {
+  let id = request.params.id
+  let book = request.body
+  console.log('book', book)
+  console.log('book', id)
+  console.log('book', request.body)
+
+  db.updateBook(id, book)
+  .then(result => {
+    response.json(result)
+  }).catch(error => response.status( 404 ).json() )
+
+  // What are the things we need to do?
+    // Get input - title, author, year, id
+    // Update book id with title and year
+    // Then update book authors with author
+      // delete everything in book_authors with this book id
+      // ensure that the authors exist in the authors
+      // get all the ids now for the authors
+      // insert the book id/author ids into book_authors
+    // Then fetch the book again to return to client
+})
 
 server.post('/api/books/:id/delete', (request, response) => {
   db.deleteBook( request.params.id )

@@ -19,14 +19,12 @@
 // })
 
 const thisBook = document.getElementsByClassName('book')
-console.log('thisBook', thisBook);
 for(var i =0; i< thisBook.length; i++) {
 thisBook[i].addEventListener('click', () => {
     const bookID = document.getElementById('book-id').value
         window.location = `/details/${bookID}`
       })
   }
-
 
 
 
