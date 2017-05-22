@@ -12,22 +12,6 @@ const resetDb = () => {
   ])
 }
 
-//  Keeping these for future reference
-//  const deleteBook = (id) => {
-//   return Promise.all([
-//     pgpdb.query('DELETE from books where id = $1', [id]),
-//     pgpdb.query('DELETE from book_authors where book_id = $1', [id]),
-//     pgpdb.query('DELETE from book_genres where book_id = $1', [id])
-//   ])
-// }
-// const deleteBook = (id) => {
-//   return pgpdb.query('DELETE from books where id = $1', [id])
-//   .then(
-//   return pgpdb.query('DELETE from book_authors where book_id = $1', [id])
-// ).then(
-//   return pgpdb.query('DELETE from book_genres where book_id = $1', [id])
-// )}
-
 const deleteBook = (id) => {
   return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};`)
 }
