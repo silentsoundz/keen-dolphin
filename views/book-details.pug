@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title keen-dolphin's Simple Bookstore
+    link(rel='stylesheet', href='/styles/meyers-reset.css')
+    link(rel='stylesheet', href='/styles/book-details.css')
+  body
+    .header
+      p#logo keen-dolphin's
+      h1 Book Details Page
+      hr
+    .main
+      ul.book
+        li
+          img#book-cover(src='http://placehold.it/150x225', alt='book cover')
+        .book-info
+          li#book-title= book.title
+          li#book-author= book.author
+          li#book-genre= book.genre
+          li#book-year= book.year
+          hr
+          .buttons
+            input#book-id(type='hidden', value=book.id)
+            form.buttons(action=`/edit/${book.id}`, method='get')
+             button#edit(type='submit') Edit
+            form.buttons(action=`/api/books/${book.id}/delete`, method='post')
+             button#delete(type='submit') Delete

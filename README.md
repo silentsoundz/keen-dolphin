@@ -18,33 +18,33 @@ In this goal, we will be applying the CRUD pattern to the real-world system of a
 
 ## Specifications
 
-- [ ] Books have a title, author, and genre
+- [x] Books have a title, author, and genre
 - [ ] Users can...
-  - [ ] Add books into the bookstore system via an admin page (_create_)
-  - [ ] See a list of books on the home page (_read_)
-  - [ ] Edit a book's title, author, or genre (_update_)
-  - [ ] Delete a book from the bookstore (_delete_)
+  - [x] Add books into the bookstore system via an admin page (_create_)
+  - [x] See a list of books on the home page (_read_)
+  - [x] Edit a book's title, author, or genre (_update_)
+  - [x] Delete a book from the bookstore (_delete_)
   - [ ] Search for books by title OR by author OR by genre (_read_)
-  - [ ] View book details on a book detail page (_read_)
+  - [x] View book details on a book detail page (_read_)
 - [ ] Lists of books are always paginated in groups of 10
-- [ ] Book detail view is linked to from the listing and search pages
+- [x] Book detail view is linked to from the listing and search pages
 - [ ] Search results are presented in a new page
-- [ ] Appropriate HTTP verbs are used for CRUD actions
-  - [ ] `GET` requests are only used for _read_ actions
-  - [ ] `POST` requests are only used for _create_ actions
-  - [ ] `PUT` or `PATCH` requests are only used for _update_ actions
-  - [ ] `DELETE` requests are only used for _delete_ actions
-- [ ] All views are rendered on the server using server-side templates written with [Pug][] or [EJS][]
-- [ ] Web server can be started with the command `npm start`
-- [ ] Test suite can be run with the command `npm test`
-- [ ] All code submissions are peer reviewed via GitHub PR by at least one other member of the team
-- [ ] Master is always in a stable state (tests passing, site functions)
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
+- [x] Appropriate HTTP verbs are used for CRUD actions
+  - [x] `GET` requests are only used for _read_ actions
+  - [x] `POST` requests are only used for _create_ actions
+  - [x] `PUT` or `PATCH` requests are only used for _update_ actions
+  - [x] `DELETE` requests are only used for _delete_ actions
+- [x] All views are rendered on the server using server-side templates written with [Pug][] or [EJS][]
+- [x] Web server can be started with the command `npm start`
+- [x] Test suite can be run with the command `npm test`
+- [x] All code submissions are peer reviewed via GitHub PR by at least one other member of the team
+- [x] Master is always in a stable state (tests passing, site functions)
+- [x] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
 
 ### Stretch
 
 - [ ] App is deployed and live on the web (consider using Heroku)
-- [ ] All source code is written with ES6
+- [x] All source code is written with ES6
 - [ ] Users have their own account and can sign up and log in/out
 - [ ] Users have one of three roles: `admin`, `clerk`, `reader`
   - [ ] Users with role `reader` can only view and search for books

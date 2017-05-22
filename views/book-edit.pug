@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title keen-dolphin's Simple Bookstore
+    link(rel='stylesheet', href='/styles/meyers-reset.css')
+    link(rel='stylesheet', href='/styles/book-edit.css')
+  body
+    .header
+      p#logo keen-dolphin's
+      h1 Edit Book Page
+      hr
+    .main
+      ul
+        li
+          img#book-cover(src='http://placehold.it/150x225', alt='book cover')
+        .book-info
+          form(action=`/api/books/edit/${book.id}`, method='post')
+            li#book-title
+              input(type='text' name='title', value=book.title)
+            li#book-year
+              input(type='text' name='year', value=book.year)
+            button#edit(type='submit' method='post' value='submit') Submit
+            

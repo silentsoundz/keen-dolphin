@@ -1,41 +1,43 @@
 const pgp = require('pg-promise')()
-const pgpdb = pgp({ database: 'bookworm'})
-
+const pgpdb = pgp({ database:'bookworm'})
+const SQL = require( './sql-strings' )
 
 const resetDb = () => {
   return Promise.all([
-    pgbpdb.query('truncate table books restart identity')
-    pgbpdb.query('truncate table authors restart identity')
-    pgbpdb.query('truncate table genres restart identity')
-    pgbpdb.query('truncate table book_authors restart identity')
-    pgbpdb.query('truncate table book_genres restart identity')
+    pgpdb.query('truncate table books restart identity'),
+    pgpdb.query('truncate table authors restart identity'),
+    pgpdb.query('truncate table genres restart identity'),
+    pgpdb.query('truncate table book_authors restart identity'),
+    pgpdb.query('truncate table book_genres restart identity')
   ])
 }
 
 const deleteBook = (id) => {
-  return pgpdb.query('DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};')
+  return pgpdb.query(`DELETE from books where id = ${id}; DELETE from book_authors where book_id = ${id};DELETE from book_genres where book_id = ${id};`)
 }
 
 const updateBook = (id, title, year) => {
-  return pgpdb.query('UPDATE books SET title = $1,year = $2 WHERE id = $3 ;', [title, year, id])
+  return pgpdb.query('UPDATE books SET title = $1,year = $2 WHERE id = $3;', [title, year, id])
 }
 
 const createBook = (title, year) => {
-  return pgpdb.query(' insert into books( title, year) values($1, $2) returning id',[title, year]).then(result => result[0].id)
+  return pgpdb.query('insert into books( title, year ) values($1, $2) returning id', [title, year]).then(result => result[0].id)
+}
 
 const createAuthor = author => {
-  return pgpdb.query('insert into authors ( name ) values( $1 ) returning id', [author]).then(result => rsult[0].id)
+  return pgpdb.query('insert into authors( name ) values( $1 ) returning id', [author]).then(result => result[0].id)
 }
 
 const createGenre = genre => {
-  return pgpdb.query('insert into genres ( name ) values( $1 ) returning id', [genre]).then(result => result[0].id)
+  return pgpdb.query('insert into genres( name ) values( $1 ) returning id', [genre]).then(result => result[0].id)
 }
 
-const getGenres = () =>
-  pgpdb.any( "SELECT DISTINCT genres.name FROM genres ORDER BY name ASC LIMIT 10" )
+const getGenres = () => {
+  return pgpdb.any( 'SELECT DISTINCT genres.name FROM genres ORDER BY name ASC LIMIT 10' )
+}
 
-const joinBookAuthor =(bookId, authorId) => {
-  return pgpdb.query('insert into book_authors( book_in, author_id ) values( $1, $2 )', [ bookId, authorId ])
+const joinBookAuthor = (bookId, authorId) => {
+  return pgpdb.query('insert into book_authors( book_id, author_id ) values( $1, $2 )', [ bookId, authorId ])
 }
 
 const joinBookGenre = (bookId, genreId) => {
@@ -45,7 +47,7 @@ const joinBookGenre = (bookId, genreId) => {
 const createWholeBook = book => {
   return Promise.all([
     createBook(book.title, book.year),
-    creteAuthor(book.author),
+    createAuthor(book.author),
     Promise.all(
       book.genres.sort().map(genre => {
         return createGenre(genre)
@@ -54,7 +56,7 @@ const createWholeBook = book => {
   ]).then(results => {
     const bookId = results[0]
     const authorId = results[1]
-    conast genreIds = results[2]
+    const genreIds = results[2]
 
     joinBookAuthor(bookId, authorId)
 
@@ -70,7 +72,7 @@ const createWholeBook = book => {
 
 const BOOKS_QUERY =
   `SELECT books.*,
-    (SELECT authors.name FROM authors, book_authors WHERE book_authors.book_id=books.id AND book_authors.author_id=authors.id LIMIT 1) AS author,
+    (SELECT authors.name FROM authors, book_authors WHERE book_authors.book_id=books.id AND book_authors.author_id=authors.id LIMIT 10) AS author,
     array(SELECT genres.name FROM genres, book_genres WHERE book_genres.book_id=books.id AND book_genres.genre_id=genres.id ORDER BY genres.name ASC) AS genres
   FROM books`
 
@@ -82,17 +84,17 @@ const getBook = (id) => {
   WHERE books.id = ${id}`)
 }
 
-const getBooks = ({ page, title, author, year, cont}) => {
-  page = parsInt( page || 1 )
+const getBooks = ({ page, title, author, year, count}) => {
+  page = parseInt( page || 1 )
   const offset = (page -1) * 10
 
   let params = [ offset ]
-  let index =
+  let index = 1
   let clauses = []
 
-  if( cont !== undefined ) {
+  if( count !== undefined ) {
     clauses.push( `SELECT books.id FROM books LIMIT 1 OFFSET $1` , [count])
-    params.push( count)
+    params.push( count )
   }
 
   if( title !== undefined ) {
@@ -105,22 +107,21 @@ const getBooks = ({ page, title, author, year, cont}) => {
     params.push( author )
   }
 
-
   if ( year != undefined ) {
     clauses.push( `books.year=\$${++index}` )
     params.push( year )
   }
 
-  query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ')}` : ''} ORDER BY title LIMIT 50 OFFSET $1`
+  query = `${BOOKS_QUERY} ${clauses.length > 0 ? `WHERE ${clauses.join( ' AND ')}` : ''} ORDER BY title LIMIT 10 OFFSET $1`
 
-  return phpdb.query( query, params )
+  return pgpdb.query( query, params )
   }
 
-const getAuthors = ({ page, author}) => {
-  page = parseInt(page || 1)
-  const offset = ( page -1) * 10
-  feturn pgpdb.query(`SELECT  authors.name, authors.id FROM authors LIMIT 10 OFFSET $1` , [offset])
-}
+  const getAuthors = ({ page, author}) => {
+    page = parseInt(page || 1)
+    const offset = ( page -1) * 10
+    return pgpdb.query(`SELECT  authors.name, authors.id FROM authors LIMIT 10 OFFSET $1` , [offset])
+  }
 
 const searchByAuthor = id => {
   return pgpdb.query(`
