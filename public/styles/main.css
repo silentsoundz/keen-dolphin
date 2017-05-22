@@ -28,12 +28,10 @@ h1 {
 }
 #search-box:hover {
   width: 40%;
-  /*border: 3px solid blue;*/
 }
 hr {
   width: 80%;
   opacity: .3;
-
 }
 .main {
   display: flex;
@@ -41,8 +39,6 @@ hr {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
-
 }
 .book {
   border: 1px solid rgba(0,0,0, .1);
@@ -55,7 +51,6 @@ hr {
 #book-cover {
   float: left;
   box-shadow: inset 10px 9px 12px -3px rgba(212,212,212,1);
-  /*box-shadow: 2px 6px 26px 6px;*/
 }
 .book-info{
   float: left;
@@ -67,13 +62,10 @@ hr {
 }
 #book-author {
   font-size: 1.5em;
-
 }
 #book-genre {
   font-size: 1em;
-
 }
 .buttons {
   font-size: 1.5em;
-
 }
